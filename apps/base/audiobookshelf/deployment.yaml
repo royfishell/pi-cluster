@@ -11,6 +11,11 @@ spec:
     metadata:
       labels:
         app: audiobookshelf
+      securityContext:
+        fsGroup: 1000
+        runAsUser: 1000
+        runAsGroup: 1000
+
     spec:
       containers:
         - name: audiobookshelf
@@ -24,6 +29,9 @@ spec:
             - configMapRef:
                 name: audiobookshelf-configmap
 
+          securityContext:
+              allowPrivilegeEscalation: false
+
           volumeMounts:
             - name: audiobookshelf-audiobooks
               mountPath: /audiobooks
@@ -33,6 +41,7 @@ spec:
               mountPath: /config
             - name: audiobookshelf-metadata
               mountPath: /metadata
+
       volumes:
         - name: audiobookshelf-audiobooks
           persistentVolumeClaim:
