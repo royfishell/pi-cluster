@@ -31,11 +31,10 @@ spec:
       ingress:
         enabled: true
         ingressClassName: traefik
-        labels: grafana
         hosts:
           - grafana.gizahut.xyz
         path: /
-        tls:
-          - secretName: grafana-tls-secret
-            hosts:
-            - grafana.gizahut.xyz
+      # tls:
+      #   - secretName: grafana-tls-secret
+      #     hosts:
+      #     - grafana.gizahut.xyz
