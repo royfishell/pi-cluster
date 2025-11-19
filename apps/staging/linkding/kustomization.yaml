@@ -5,4 +5,4 @@ resources:
   - ../../base/linkding/
   - cloudflare.yaml
   - tunnel-credentials.yaml
-  - test-secret.yaml
+  - superuser-credentials.yaml
