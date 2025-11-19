@@ -37,4 +37,4 @@ spec:
         tls:
           - secretName: grafana-tls-secret
             hosts:
-            - gizahut.xyz
+            - grafana.gizahut.xyz
