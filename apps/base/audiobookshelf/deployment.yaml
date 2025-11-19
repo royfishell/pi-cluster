@@ -32,7 +32,7 @@ spec:
                 name: audiobookshelf-configmap
 
           securityContext:
-              allowPrivilegeEscalation: true
+              allowPrivilegeEscalation: false
 
           volumeMounts:
             - name: audiobookshelf-audiobooks
