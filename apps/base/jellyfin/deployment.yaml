@@ -46,7 +46,7 @@ spec:
         - name: jellyfin-media
           nfs:
             server: 192.168.4.50
-            path: /mnt/storage/media
+            path: "/mnt/storage/media"
             readOnly: true
 
       restartPolicy: Always
