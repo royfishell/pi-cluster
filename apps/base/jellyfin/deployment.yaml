@@ -14,10 +14,10 @@ spec:
         app: jellyfin
 
     spec:
-    # securityContext:
-    #   fsGroup: 1000
-    #   runAsUser: 1000
-    #   runAsGroup: 1000
+      securityContext:
+        fsGroup: 33
+        runAsUser: 33
+        runAsGroup: 33
 
       containers:
         - name: jellyfin
@@ -30,8 +30,8 @@ spec:
             - configMapRef:
                 name: jellyfin-configmap
 
-    #     securityContext:
-    #         allowPrivilegeEscalation: false
+          securityContext:
+              allowPrivilegeEscalation: false
 
           volumeMounts:
             - name: jellyfin-config
