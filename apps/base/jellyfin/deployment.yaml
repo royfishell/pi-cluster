@@ -33,29 +33,20 @@ spec:
     #     securityContext:
     #         allowPrivilegeEscalation: false
 
-    #     volumeMounts:
-    #       - name: jellyfin-audiobooks
-    #         mountPath: /audiobooks
-    #       - name: jellyfin-podcasts
-    #         mountPath: /podcasts
-    #       - name: jellyfin-config
-    #         mountPath: /config
-    #       - name: jellyfin-metadata
-    #         mountPath: /metadata
+          volumeMounts:
+            - name: jellyfin-config
+              mountPath: /config
+            - name: jellyfin-media
+              mountPath: /media
 
-
-    # volumes:
-    #   - name: jellyfin-audiobooks
-    #     persistentVolumeClaim:
-    #       claimName: jellyfin-audiobooks
-    #   - name: jellyfin-podcasts
-    #     persistentVolumeClaim:
-    #       claimName: jellyfin-podcasts
-    #   - name: jellyfin-config
-    #     persistentVolumeClaim:
-    #       claimName: jellyfin-config
-    #   - name: jellyfin-metadata
-    #     persistentVolumeClaim:
-    #       claimName: jellyfin-metadata
+      volumes:
+        - name: jellyfin-config
+          persistentVolumeClaim:
+            claimName: jellyfin-config
+        - name: jellyfin-media
+          nfs:
+            server: 192.168.4.50
+            path: /mnt/storage/media
+            readOnly: true
 
       restartPolicy: Always
