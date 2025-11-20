@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: jellyfin-configmap
+  namespace: jellyfin
+data:
+  TZ: "America/Los_Angeles"
